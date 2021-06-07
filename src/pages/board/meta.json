@@ -1,0 +1,9 @@
+{
+    "index": 1,
+    "showOnMenu": false,
+    "hideOnBreadcrumb": true,
+    "menu": {
+        "title": "home",
+        "icon": "el-icon-menu"
+    }
+}
