@@ -7,11 +7,11 @@ import tempRouter from './temp.router.js' // 自动化路由 webpack启动后会
 const routes = [
   {
     path: '',
-    redirect: '/home',
+    redirect: '/list',
   },
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/list',
   },
   ...tempRouter,
   {
@@ -19,10 +19,10 @@ const routes = [
     alias: ['/401', '/500'],
     component: ErrorPage,
   },
-  // {
-	// 	path: '*',
-	// 	redirect: '/404'
-	// }
+  {
+		path: '*',
+		redirect: '/404'
+	}
 ]
 
 

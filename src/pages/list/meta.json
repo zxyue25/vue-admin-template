@@ -1,9 +1,9 @@
 {
-    "index": 2,
+    "index": 1,
     "showOnMenu": true,
     "hideOnBreadcrumb": false,
     "menu": {
-        "title": "board",
+        "title": "列表",
         "icon": "el-icon-menu"
     }
 }

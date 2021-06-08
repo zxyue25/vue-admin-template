@@ -1,10 +1,14 @@
 <template>
   <basic-layout :user-name="userName" @logout-click="handleLogoutClick">
-    <!-- <widget-render
-      src="/market-common/js/bread-crumb.widgets.js"
-      :routes="routes"
-    >
-    </widget-render> -->
+    <bread-crumb :routes="routes"></bread-crumb>
+    <template slot="page-sidemenu">
+      <side-menu
+        src="/market-common/js/side-menu-find.widgets.js"
+        :routes="routes"
+        :showAppName="showAppName"
+      >
+      </side-menu>
+    </template>
     <template slot="page-main">
       <keep-alive>
         <transition name="fade-transform" mode="out-in">
@@ -17,16 +21,21 @@
 
 <script>
 import BasicLayout from '@/layouts/basic-layout'
+import BreadCrumb from '@/components/bread-crumb'
+import SideMenu from '@/components/side-menu'
 import { metaJSONTree as routes } from '@/router/temp.router'
 import { getUserInfo, logout } from '@/api'
 export default {
   components: {
     BasicLayout,
+    BreadCrumb,
+    SideMenu
   },
   data() {
     return {
       menuAuths: '',
       userName: '',
+      showAppName: "shbbb",
       routes: JSON.stringify(routes),
     }
   },
@@ -35,7 +44,7 @@ export default {
       const res = await getUserInfo()
       if (res.success) {
         const { data } = res
-        this.userName = data.username || data.erp || "用户名"
+        this.userName = data.username || data.erp || '用户名'
       }
     } catch (e) {
       this.$message.error(e)
@@ -45,20 +54,20 @@ export default {
   computed: {},
   methods: {
     async handleLogoutClick() {
-        try {
-          const res = await logout()
-          if (res.success) {
-            localStorage.clear()
-            location.href =
-              window.globalVariables.VUE_APP_LOGOUT_URL +
-              '?return_url=' +
-              window.globalUrl.common.replace('/market-common', '')
-          } else {
-            this.$message.error(res.desc)
-          }
-        } catch (e) {
-          this.$message.error(e)
+      try {
+        const res = await logout()
+        if (res.success) {
+          localStorage.clear()
+          location.href =
+            window.globalVariables.VUE_APP_LOGOUT_URL +
+            '?return_url=' +
+            window.globalUrl.common.replace('/market-common', '')
+        } else {
+          this.$message.error(res.desc)
         }
+      } catch (e) {
+        this.$message.error(e)
+      }
     },
   },
 }

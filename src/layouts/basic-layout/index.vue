@@ -72,6 +72,7 @@ export default {
 .page-main__container {
   display: flex;
   flex-direction: column;
+  padding-top: 0;
 }
 .isMicro {
   padding: 0;

@@ -6,5 +6,6 @@ const fetch = (url, data, method, _, contentType) => {
 }
 // 登录
 export const getUserInfo = () => fetch('/common/user/info', '', 'get')
+
 // 退出登录
 export const logout = () => fetch('/logout','', 'post')
