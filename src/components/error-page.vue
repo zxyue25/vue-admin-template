@@ -1,6 +1,6 @@
 <template>
   <el-main class="error-page">
-    <img :src="imgSrc" />
+    <img :src="imgObj[path.replace('/', '')]" />
     <div class="text-con">
       <h4>{{ path.replace('/', '') }}</h4>
       <h5 style="margin:33px 0;" v-if="desc">{{ desc }}</h5>
@@ -13,23 +13,37 @@
 
 <script>
 export default {
-  name: 'error_content',
-  data() {
-    return {
-      401: require('@/assets/img/401.png'),
-      404: require('@/assets/img/404.png'),
-      500: require('@/assets/img/500.png'),
-    }
-  },
+  name: 'error_page',
   props: {
     path: String,
     desc: String,
   },
-  computed: {
-    imgSrc() {
-      return require(`@/assets/img${this.path}.png`)
-    },
+  data() {
+    return {
+      imgObj: {
+        401: require('@/assets/img/401.png'),
+        404: require('@/assets/img/404.png'),
+        500: require('@/assets/img/500.png'),
+      },
+    }
   },
+  //   watch: {
+  //     path: {
+  //       handler() {
+  //         this.imgSrc = require(`../assets/img${this.path}.png`)
+  //         // eslint-disable-next-line no-debugger
+  //         debugger
+  //       },
+  //       immediate: true,
+  //     },
+  //   },
+  //   computed: {
+  //     imgSrc() {
+  //         this[this.path.replace('/', '')]
+  //         debugger
+  //       return this[this.path.replace('/', '')]
+  //     },
+  //   },
   methods: {
     backHome() {
       this.$router.push('/')

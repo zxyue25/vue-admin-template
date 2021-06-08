@@ -3,7 +3,7 @@
     "showOnMenu": true,
     "hideOnBreadcrumb": false,
     "menu": {
-        "title": "401",
+        "title": "500错误页",
         "icon": "el-icon-menu"
     }
 }

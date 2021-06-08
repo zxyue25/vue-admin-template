@@ -1,9 +1,9 @@
 {
-    "index": 3,
+    "index": 1,
     "showOnMenu": true,
     "hideOnBreadcrumb": false,
     "menu": {
-        "title": "500",
+        "title": "no-permission",
         "icon": "el-icon-menu"
     }
 }

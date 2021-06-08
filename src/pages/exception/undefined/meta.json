@@ -1,9 +1,9 @@
 {
-    "index": 3,
+    "index": 2,
     "showOnMenu": true,
     "hideOnBreadcrumb": false,
     "menu": {
-        "title": "404",
+        "title": "404错误页",
         "icon": "el-icon-menu"
     }
 }
