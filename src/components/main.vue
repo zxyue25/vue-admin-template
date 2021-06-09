@@ -58,10 +58,7 @@ export default {
         const res = await logout()
         if (res.success) {
           localStorage.clear()
-          location.href =
-            window.globalVariables.VUE_APP_LOGOUT_URL +
-            '?return_url=' +
-            window.globalUrl.common.replace('/market-common', '')
+          location.href = ''
         } else {
           this.$message.error(res.desc)
         }

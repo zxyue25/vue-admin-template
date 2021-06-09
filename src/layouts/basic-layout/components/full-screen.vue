@@ -26,8 +26,8 @@ export default {
   name: 'full-screen',
   data() {
     return {
-      fullscreen: require('../assets/img/fullscreen.png'),
-      fullscreenExit: require('../assets/img/fullscreen-exit.png'),
+      fullscreen: require('@/assets/img/fullscreen.png'),
+      fullscreenExit: require('@/assets/img/fullscreen-exit.png'),
     }
   },
   props: {

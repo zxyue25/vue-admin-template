@@ -1,6 +1,5 @@
 <template>
   <table-extra
-    src="/market-common/js/table-extra.widgets.js"
     :loading="loading"
     :tableData="JSON.stringify(tableData)"
     :formTableData="formTableData"
